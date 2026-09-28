@@ -1,0 +1,245 @@
+[
+  {
+    "name": "Interstellar",
+    "description": "When Earth becomes uninhabitable, a team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival.",
+    "duration": 169,
+    "ratings": 8.7,
+    "totalRating": 2100,
+    "releaseYear": 2014,
+    "releaseDate": "2014-11-07T00:00:00.000Z",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "directors": [ "Christopher Nolan" ],
+    "coverImage": "interstellar-2014.jpg",
+    "actors": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Jessica Chastain"
+    ],
+    "price": 60
+  },
+  {
+    "name": "Mad Max: Fury Road",
+    "description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper and a drifter named Max.",
+    "duration": 120,
+    "ratings": 8.1,
+    "totalRating": 1250,
+    "releaseYear": 2015,
+    "releaseDate": "2015-05-15T00:00:00.000Z",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Sci-Fi"
+    ],
+    "directors": [ "George Miller" ],
+    "coverImage": "madmax-furyroad-2015.jpg",
+    "actors": [
+      "Tom Hardy",
+      "Charlize Theron",
+      "Nicholas Hoult"
+    ],
+    "price": 45
+  },
+  {
+    "name": "Dune: Part Two",
+    "description": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family, facing a choice between the love of his life and the fate of the universe.",
+    "duration": 166,
+    "ratings": 8.6,
+    "totalRating": 480,
+    "releaseYear": 2024,
+    "releaseDate": "2024-03-01T00:00:00.000Z",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "directors": [ "Denis Villeneuve" ],
+    "coverImage": "dune-part2-2024.jpg",
+    "actors": [
+      "Timothée Chalamet",
+      "Zendaya",
+      "Rebecca Ferguson"
+    ],
+    "price": 75
+  },
+    {
+    "name": "Inception",
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "duration": 148,
+    "ratings": 8.8,
+    "totalRating": 2500,
+    "releaseYear": 2010,
+    "releaseDate": "2010-07-16T00:00:00.000Z",
+    "genres": ["Action", "Sci-Fi", "Thriller"],
+    "directors": ["Christopher Nolan"],
+    "coverImage": "inception-2010.jpg",
+    "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page"],
+    "price": 55
+  },
+  {
+    "name": "The Matrix",
+    "description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+    "duration": 136,
+    "ratings": 8.7,
+    "totalRating": 2000,
+    "releaseYear": 1999,
+    "releaseDate": "1999-03-31T00:00:00.000Z",
+    "genres": ["Action", "Sci-Fi"],
+    "directors": ["Lana Wachowski", "Lilly Wachowski"],
+    "coverImage": "the-matrix-1999.jpg",
+    "actors": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+    "price": 45
+  },
+  {
+    "name": "The Martian",
+    "description": "An astronaut becomes stranded on Mars after his team assume him dead, and must rely on his ingenuity to find a way to signal to Earth that he is alive.",
+    "duration": 141,
+    "ratings": 8.0,
+    "totalRating": 900,
+    "releaseYear": 2015,
+    "releaseDate": "2015-10-02T00:00:00.000Z",
+    "genres": ["Adventure", "Drama", "Sci-Fi"],
+    "directors": ["Ridley Scott"],
+    "coverImage": "the-martian-2015.jpg",
+    "actors": ["Matt Damon", "Jessica Chastain", "Kristen Wiig"],
+    "price": 50
+  },
+  {
+    "name": "Avatar",
+    "description": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+    "duration": 162,
+    "ratings": 7.9,
+    "totalRating": 1300,
+    "releaseYear": 2009,
+    "releaseDate": "2009-12-18T00:00:00.000Z",
+    "genres": ["Action", "Adventure", "Fantasy"],
+    "directors": ["James Cameron"],
+    "coverImage": "avatar-2009.jpg",
+    "actors": ["Sam Worthington", "Zoe Saldana", "Sigourney Weaver"],
+    "price": 65
+  },
+
+  {
+    "name": "The Shawshank Redemption",
+    "description": "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.",
+    "duration": 142,
+    "ratings": 9.3,
+    "totalRating": 2900,
+    "releaseYear": 1994,
+    "releaseDate": "1994-10-14T00:00:00.000Z",
+    "genres": ["Drama"],
+    "directors": ["Frank Darabont"],
+    "coverImage": "the-shawshank-redemption-1994.jpg",
+    "actors": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+    "price": 40
+  },
+  {
+    "name": "Fight Club",
+    "description": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.",
+    "duration": 139,
+    "ratings": 8.8,
+    "totalRating": 2300,
+    "releaseYear": 1999,
+    "releaseDate": "1999-10-15T00:00:00.000Z",
+    "genres": ["Drama"],
+    "directors": ["David Fincher"],
+    "coverImage": "fight-club-1999.jpg",
+    "actors": ["Brad Pitt", "Edward Norton", "Meat Loaf"],
+    "price": 48
+  },
+  {
+    "name": "The Prestige",
+    "description": "After a tragic accident, two stage magicians in 1890s London engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other.",
+    "duration": 130,
+    "ratings": 8.5,
+    "totalRating": 1400,
+    "releaseYear": 2006,
+    "releaseDate": "2006-10-20T00:00:00.000Z",
+    "genres": ["Drama", "Mystery", "Sci-Fi"],
+    "directors": ["Christopher Nolan"],
+    "coverImage": "the-prestige-2006.jpg",
+    "actors": ["Christian Bale", "Hugh Jackman", "Scarlett Johansson"],
+    "price": 52
+  },
+  {
+    "name": "Parasite",
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
+    "duration": 132,
+    "ratings": 8.5,
+    "totalRating": 950,
+    "releaseYear": 2019,
+    "releaseDate": "2019-11-08T00:00:00.000Z",
+    "genres": ["Drama", "Thriller"],
+    "directors": ["Bong Joon Ho"],
+    "coverImage": "parasite-2019.jpg",
+    "actors": ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong"],
+    "price": 58
+  },
+  
+  {
+    "name": "The Dark Knight",
+    "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+    "duration": 152,
+    "ratings": 9.0,
+    "totalRating": 2800,
+    "releaseYear": 2008,
+    "releaseDate": "2008-07-18T00:00:00.000Z",
+    "genres": ["Action", "Crime", "Drama"],
+    "directors": ["Christopher Nolan"],
+    "coverImage": "the-dark-knight-2008.jpg",
+    "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+    "price": 70
+  },
+  {
+    "name": "Gladiator",
+    "description": "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
+    "duration": 155,
+    "ratings": 8.5,
+    "totalRating": 1600,
+    "releaseYear": 2000,
+    "releaseDate": "2000-05-05T00:00:00.000Z",
+    "genres": ["Action", "Adventure", "Drama"],
+    "directors": ["Ridley Scott"],
+    "coverImage": "gladiator-2000.jpg",
+    "actors": ["Russell Crowe", "Joaquin Phoenix", "Connie Nielsen"],
+    "price": 42
+  },
+  {
+    "name": "DuneS: Part Two",
+    "description": "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
+    "duration": 166,
+    "ratings": 8.6,
+    "totalRating": 450,
+    "releaseYear": 2024,
+    "releaseDate": "2024-03-01T00:00:00.000Z",
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "directors": ["Denis Villeneuve"],
+    "coverImage": "dune-part-two-2024.jpg",
+    "actors": ["Timothée Chalamet", "Zendaya", "Rebecca Ferguson"],
+    "price": 75
+  },
+  {
+    "name": "Mad Max2: Fury Road",
+    "description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max.",
+    "duration": 120,
+    "ratings": 8.1,
+    "totalRating": 1100,
+    "releaseYear": 2015,
+    "releaseDate": "2015-05-15T00:00:00.000Z",
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "directors": ["George Miller"],
+    "coverImage": "mad-max-fury-road-2015.jpg",
+    "actors": ["Tom Hardy", "Charlize Theron", "Nicholas Hoult"],
+    "price": 49
+ }
+
+
+
+
+]
+
+
+
