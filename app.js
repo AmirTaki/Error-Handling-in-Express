@@ -5,9 +5,12 @@ app.set('query parser', 'extended');
 
 app.use(express.json())
 const router = require('./Routes/moviesRoute')
+// Error Class
+const CustomError = require('./Utils/CustomError');
+const globalErrorHandler =  require('./Controller/errorController')
 
 // Middleware
-const morgan = require('morgan')
+const morgan = require('morgan');
 const logger = (req, res, next) => {
     console.log('logger')
     next()
@@ -37,23 +40,15 @@ app.all("/*catchAll", (req, res, next) => {
     //     message: `Can't find ${req.originalUrl} on the server!`
     // })
 
-    const err = new Error(`Can't find ${req.originalUrl} on the server!`)
-    err.status = 'fail',
-    err.statusCode = 404
-    
+    // const err = new Error(`Can't find ${req.originalUrl} on the server!`)
+    // err.status = 'fail',
+    // err.statusCode = 404
+    const err = new CustomError(`Can't find ${req.originalUrl} on the server!`, 404)
     next(err)
 })
 
 // GLOBAL ERROR HANDLING MIDDLEWARE
-app.use((error, req, res, next) => {
-    error.statusCode = error.statusCode || 500;
-    error.status = error.status || 'error'
-
-    res.status(error.statusCode).json({
-        status: error.statusCode,
-        message: error.message
-    })
-})
+app.use(globalErrorHandler)
 
 
 module.exports = app
