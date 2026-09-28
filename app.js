@@ -30,7 +30,15 @@ const path = '/api/v1/movies'
 // route
 app.use(path, router)
 // error not found
-app.use((req, res) => {res.status(404).json({status: 'fail', message: 'not found page incrrect url !'})})
+app.all("/*catchAll", (req, res, next) => {
+    res.status(404).json({
+        status: 'fail',
+        message: `Can't find ${req.originalUrl} on the server!`
+    })
+})
+
+
+// app.use((req, res) => {res.status(404).json({status: 'fail', message: 'not found page incrrect url !'})})
 
 module.exports = app
 
