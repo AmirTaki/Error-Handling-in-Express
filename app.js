@@ -35,14 +35,6 @@ app.use(path, router)
 
 // DEFAULT ROUTE
 app.all("/*catchAll", (req, res, next) => {
-    // res.status(404).json({
-    //     status: 'fail',
-    //     message: `Can't find ${req.originalUrl} on the server!`
-    // })
-
-    // const err = new Error(`Can't find ${req.originalUrl} on the server!`)
-    // err.status = 'fail',
-    // err.statusCode = 404
     const err = new CustomError(`Can't find ${req.originalUrl} on the server!`, 404)
     next(err)
 })
