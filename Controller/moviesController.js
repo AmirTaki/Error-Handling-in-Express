@@ -14,7 +14,7 @@ exports. getAllMovies = asyncErrorHanlder (
             .pagination()
         
         const movies = await feature.query
-        res.status(201).json({
+        res.status(200).json({
             status: "success",
             length: movies.length,
             data: {movies}
@@ -32,33 +32,16 @@ exports.createMovie = asyncErrorHanlder(
         })
     }
 )
-
-/*
-exports. createMovie =   async (req, res, next) => {
-    try {
-        const movie = await Movie.create(req.body)
-
-        res.status(201).json({
-            status: "success",
-            data: {movie}
-        })
-    }
-    catch(err){
-        const error = new CustomError(err.message, 400)
-        next(error)
-        // res.status(400).json({
-        //     status: 'fail',
-        //     message: err.message
-        // })
-    }
-}
-*/
-
 // GET MOVIE WHIT ID
 exports. getMovie = asyncErrorHanlder(
     async (req, res, next) => {
         // const movie = await Movie.find({_id: req.params.id})
         const movie = await Movie.findById(req.params.id)
+
+        if(!movie){
+            const error =  new CustomError("Movie with that ID is not found!", 404)
+           return next(error)
+        }
 
         res.status(200).json({
             status: 'success',
@@ -69,7 +52,13 @@ exports. getMovie = asyncErrorHanlder(
 // REMOVE MOVIE WHIT ID
 exports. deleteMovie = asyncErrorHanlder(
     async (req, res, next) => {
-        await Movie.findByIdAndDelete(req.params.id)
+        const deleteMovie =  await Movie.findByIdAndDelete(req.params.id)
+        
+        if(!deleteMovie){
+            const error =  new CustomError("Movie with that ID is not found!", 404)
+           return next(error)
+        }
+
         res.status(204).json({
             status: 'success',
             data: null
@@ -81,6 +70,12 @@ exports. deleteMovie = asyncErrorHanlder(
 exports. updateMovie = asyncErrorHanlder(
     async (req, res, next) => {
         const updateMovie = await Movie.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true})
+
+        if(!updateMovie){
+            const error =  new CustomError("Movie with that ID is not found!", 404)
+           return next(error)
+        }
+
         res.status(200).json({
             status: 'success', 
             data: {movie: updateMovie}
