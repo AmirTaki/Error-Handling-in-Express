@@ -16,7 +16,7 @@ const logger = (req, res, next) => {
     next()
 }
 // logger & time & morgan
-if(process.env.NODE_ENV === "developer"){
+if(process.env.NODE_ENV === "development"){
     app.use(logger)
     app.use((req, res, next) => {
         req.createdTime = new Date().toISOString()

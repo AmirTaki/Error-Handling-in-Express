@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 require('dotenv').config({path: "./config.env"})
 const app = require("./app")
 
-process.env.NODE_ENV === "developer"&& console.log(process.env.NODE_ENV)
+// process.env.NODE_ENV === "development"&& console.log(process.env.NODE_ENV)
+console.log(process.env.NODE_ENV)
+
 
 // connect to database mongoDB
 mongoose.connect(process.env.LOCAL_CONN_STR)
