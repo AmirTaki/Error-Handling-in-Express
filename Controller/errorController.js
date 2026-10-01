@@ -1,3 +1,5 @@
+const CustomError = require("../Utils/CustomError")
+
 const developmentErrors = (res, error) => {
     res.status(error.statusCode).json({
         status: error.statusCode,
@@ -13,6 +15,8 @@ const productionErrors = (res, error) => {
             message: error.message,
         })
     }
+    // اگر یک باگ ناگهانی در کدهای ما یا پکیج‌های شخص ثالث رخ دهد، نباید بگذاریم
+    // پیام خام باگ به مشتری نشان داده شود و به جای آن پیام عمومی "مشکلی پیش آمده، بعداً تلاش کنید" فرستاده می‌شود
     else {
         res.status(500).json({
             status: 'error',
@@ -20,6 +24,12 @@ const productionErrors = (res, error) => {
         })
     }
 }
+
+const castErrorHandler = (err) => {
+    const msg = `Invalid value for ${err.path}: ${err.value}!`
+    return new CustomError(msg, 400)
+}
+
 
 module.exports = (error, req, res, next) => {
     error.statusCode = error.statusCode || 500;
@@ -30,6 +40,9 @@ module.exports = (error, req, res, next) => {
     }
 
     else if(process.env.NODE_ENV === "production"){
+        if(error.name === "CastError"){
+            error =  castErrorHandler(error)   
+        }
         productionErrors(res, error)
     }
 }
