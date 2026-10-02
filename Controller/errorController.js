@@ -37,6 +37,13 @@ const duplicateKeyErrorHandler = (err) => {
 }
 
 
+const validationErrorHandler = (err) => {
+    const errors = Object.values(err.errors).map((val) => (val.message))
+    const errorMessages = errors.join('. ')
+    const msg = `Invalid input data: ${errorMessages}`
+    return new CustomError(msg, 400)
+}
+
 module.exports = (error, req, res, next) => {
     error.statusCode = error.statusCode || 500;
     error.status = error.status || 'error'
@@ -48,7 +55,7 @@ module.exports = (error, req, res, next) => {
     else if(process.env.NODE_ENV === "production"){
         if(error.name === "CastError")   error =  castErrorHandler(error)   
         if(error.code === 11000 ) error = duplicateKeyErrorHandler(error)
-
+        if(error.name === 'ValidationError') error = validationErrorHandler(error)
         productionErrors(res, error)
     }
 }
