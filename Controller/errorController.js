@@ -30,6 +30,12 @@ const castErrorHandler = (err) => {
     return new CustomError(msg, 400)
 }
 
+const duplicateKeyErrorHandler = (err) => {
+    const name = err.keyValue.name
+    const msg = `There is already a movie with name ${name}. Plase use another name!`   
+    return new CustomError(msg, 400)
+}
+
 
 module.exports = (error, req, res, next) => {
     error.statusCode = error.statusCode || 500;
@@ -40,9 +46,16 @@ module.exports = (error, req, res, next) => {
     }
 
     else if(process.env.NODE_ENV === "production"){
-        if(error.name === "CastError"){
-            error =  castErrorHandler(error)   
-        }
+        if(error.name === "CastError")   error =  castErrorHandler(error)   
+        if(error.code === 11000 ) error = duplicateKeyErrorHandler(error)
+
         productionErrors(res, error)
     }
 }
+
+
+
+/*
+    development -> npm start
+    production -> npm run start_prod
+*/
