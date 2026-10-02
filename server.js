@@ -1,5 +1,16 @@
 const mongoose = require('mongoose')
 require('dotenv').config({path: "./config.env"})
+
+
+// It must be written before the app.
+
+// HANDLING UNCAUGHT EXCEPTIONS
+process.on("uncaughtException" , (err) => {
+    console.log(err.name, err.message)
+    console.log('Uncaught Exception occured! Shutting down...')
+    process.exit(1)
+})
+
 const app = require("./app")
 
 // process.env.NODE_ENV === "development"&& console.log(process.env.NODE_ENV)
@@ -20,6 +31,7 @@ const server =  app.listen(PORT, IP, () => {
 }) 
 
 
+// HANDLING REJECTED PROMISE GLOBALLY
 process.on('unhandledRejection', (err) => {
     console.log(err.name, err.message)
     console.log('Unhandled rejection occured! Shutting down...')
@@ -27,3 +39,7 @@ process.on('unhandledRejection', (err) => {
         process.exit(1)
     })
 })
+
+
+
+// console.log(a)

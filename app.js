@@ -42,6 +42,7 @@ app.all("/*catchAll", (req, res, next) => {
 // GLOBAL ERROR HANDLING MIDDLEWARE
 app.use(globalErrorHandler)
 
+// console.log(a)
 
 module.exports = app
 
