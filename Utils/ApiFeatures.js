@@ -6,7 +6,8 @@ class Apifeatures {
 
     //  ADVANCED FILTERING --> app.set('query parser', 'extended'); 
     filter() {
-        const { sort, list, page, limit , ...queryObj} = this.queryStr
+        const excludeFilter = ["sort", "fields"," page", "limit"]
+        const queryObj =  Object.fromEntries( Object.entries(this.queryStr).filter(([key, value]) => {return !excludeFilter.includes(key)}))
         const finalQuery = JSON.parse(JSON.stringify(queryObj).replace(/\b(gte|gt|lt|lte)\b/g, (match) => {return `$${match}`}))
         this.query = this.query.find(finalQuery)
         return this   
@@ -15,7 +16,7 @@ class Apifeatures {
     //  SORT 
     sort () {
         if(this.queryStr.sort){
-            const sortBy = this.queryStr.sort.split(",").join(" ")
+            const sortBy = this.queryStr.sort.split(",").join(' ')
             this.query = this.query.sort(sortBy)
         }
         else {
@@ -27,7 +28,7 @@ class Apifeatures {
     // LIMITING FIELDS
     limitFields() {
         if(this.queryStr.fields){
-            const fields = this.queryStr.fields.split(',').join(" ")
+            const fields = this.queryStr.fields.split(',').join(' ')
             this.query = this.query.select(fields)
         }   
         else {
@@ -41,7 +42,6 @@ class Apifeatures {
         
         const page = this.queryStr.page * 1 || 1
         const limit = this.queryStr.limit * 1 || 10
-
         // PAGE 1: 1 - 10; PAGE 2: 11 - 20; PAGE 3: 21 - 30
         const skip = (page - 1) * limit
         this.query = this.query.skip(skip).limit(limit);

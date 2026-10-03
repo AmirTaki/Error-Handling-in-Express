@@ -8,8 +8,6 @@ const CustomError = require("../Utils/CustomError")
 exports. getAllMovies = asyncErrorHanlder (
     async (req, res, next) => {
 
-        // console.log(a)
-
         const feature  = new Apifeatures(Movie.find(), req.query)
             .filter()
             .sort()
